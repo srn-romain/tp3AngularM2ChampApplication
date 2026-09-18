@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,5 +11,11 @@ export class Home {
   nbItems: number = 4;
   btnText: string = 'Envoyer';
   objectifText: string = 'mon nouveau objectif';
+
+  objectifs: string[] = [];
+
+  ngOnInit(): void {
+    this.nbItems = this.objectifs.length;
+  }
 }
 
