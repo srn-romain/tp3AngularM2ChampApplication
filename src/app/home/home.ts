@@ -9,4 +9,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Home {
   nbItems: number = 4;
+  btnText: string = 'Envoyer';
+  objectifText: string = 'mon nouveau objectif';
 }
+
