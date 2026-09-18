@@ -7,15 +7,23 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
-  nbItems: number = 4;
-  btnText: string = 'Envoyer';
+export class Home implements OnInit {
+  nbItems: number = 0;
+  btnText: string = 'Ajouter un item';
   objectifText: string = 'mon nouveau objectif';
-
   objectifs: string[] = [];
 
   ngOnInit(): void {
     this.nbItems = this.objectifs.length;
+  }
+
+  ajoutItem(): void {
+    if (this.objectifText.trim() !== '') {
+      this.objectifs.push(this.objectifText);
+      this.nbItems = this.objectifs.length;
+      console.log('Objectifs :', this.objectifs);
+      this.objectifText = '';
+    }
   }
 }
 

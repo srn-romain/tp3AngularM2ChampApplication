@@ -10,13 +10,14 @@
 <div class="container color-light">
   <div class="col">
     <p class="sm">Un nouvel élément de liste</p>
-    <form>
+    <form (submit)="ajoutItem()">
       <input type="text" class="txt" name="item" [(ngModel)]="objectifText">
-      <p>{{ objectifText }}</p>
-      <input type="submit" class="btn" [value]="btnText">
+      <input type="button" class="btn" [value]="btnText" (click)="ajoutItem()">
     </form>
   </div>
   <div class="col">
-    <p class="life-container">Un bloc</p>
+    @for (element of objectifs; track $index) {
+      <p class="life-container">{{ element }}</p>
+    }
   </div>
 </div>
