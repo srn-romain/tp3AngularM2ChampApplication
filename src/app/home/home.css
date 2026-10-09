@@ -16,21 +16,33 @@
   background: #57B3F1;
 }
 
+.btn-toggle {
+  background: #244b82;
+  color: #fff;
+  border: 0;
+  padding: 0.6em 1.8em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
 input.txt {
   border: 0;
   padding: 1em;
   width: 80%;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  border-radius: 4px;
 }
 
 input.btn {
   border: 0;
   display: block;
-  padding: 1em 3em;
-  background: rgba(230, 35, 10, 0.726);
+  padding: 0.6em 1.8em;
+  background: #27ae60;
   color: rgb(229, 239, 247);
   margin-bottom: 1em;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .life-container {

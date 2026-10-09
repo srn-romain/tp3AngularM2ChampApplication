@@ -9,11 +9,18 @@
 
 <div class="container color-light">
   <div class="col">
-    <p class="sm">Un nouvel élément de liste</p>
-    <form (submit)="ajoutItem()">
-      <input type="text" class="txt" name="item" [(ngModel)]="objectifText">
-      <input type="button" class="btn" [value]="btnText" (click)="ajoutItem()">
-    </form>
+    <button type="button" class="btn-toggle" (click)="toggleForm()">Ajouter</button>
+
+    @if (showForm) {
+      <div animate.enter="animation-ajout">
+        <p class="sm">Un nouvel élément de liste</p>
+        <form (submit)="ajoutItem()">
+          <input type="text" class="txt" name="item" [(ngModel)]="objectifText">
+          <input type="button" class="btn" [value]="btnText" (click)="ajoutItem()">
+        </form>
+        <p class="sm">{{ objectifText }}</p>
+      </div>
+    }
   </div>
   <div class="col">
     @for (element of objectifs; track $index) {

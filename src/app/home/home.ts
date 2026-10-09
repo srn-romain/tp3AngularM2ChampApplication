@@ -9,12 +9,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class Home implements OnInit {
   nbItems: number = 0;
-  btnText: string = 'Ajouter un item';
-  objectifText: string = 'mon nouveau objectif';
-  objectifs: string[] = [];
+  btnText: string = 'ajout';
+  objectifText: string = '...';
+  objectifs: string[] = ['Finir le TP', 'Faire du sport'];
+  showForm: boolean = false;
 
   ngOnInit(): void {
     this.nbItems = this.objectifs.length;
+  }
+
+  toggleForm(): void {
+    this.showForm = !this.showForm;
   }
 
   ajoutItem(): void {
