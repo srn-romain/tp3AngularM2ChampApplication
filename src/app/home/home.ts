@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,8 @@ export class Home implements OnInit {
   objectifText: string = '...';
   objectifs: string[] = ['Finir le TP', 'Faire du sport'];
   showForm: boolean = false;
+
+  constructor(private monRouteur: Router) {}
 
   ngOnInit(): void {
     this.nbItems = this.objectifs.length;
