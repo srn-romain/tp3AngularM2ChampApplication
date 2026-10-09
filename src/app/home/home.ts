@@ -31,6 +31,10 @@ export class Home implements OnInit {
       this.nbItems = this.objectifs.length;
       console.log('Objectifs :', this.objectifs);
       this.objectifText = '';
+
+      setTimeout(() => {
+        this.monRouteur.navigate(['/about']);
+      }, 1000);
     }
   }
 }
