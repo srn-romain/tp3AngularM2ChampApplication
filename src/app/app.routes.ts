@@ -9,4 +9,5 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'consultAct', component: ConsultActivite },
   { path: 'consultAct/:id', component: ConsultActivite },
+  { path: 'consultAct/:id/:param2', component: ConsultActivite },
 ];

@@ -9,10 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ConsultActivite implements OnInit {
   id: string = '';
+  param2: string = '';
 
   constructor(private route: ActivatedRoute) {
     this.id = this.route.snapshot.params['id'];
-    console.log('ID récupéré :', this.id);
+    this.param2 = this.route.snapshot.params['param2'];
   }
 
   ngOnInit(): void {}
