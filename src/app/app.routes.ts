@@ -3,6 +3,6 @@ import { Home } from './home/home';
 import { About } from './about/about';
 
 export const routes: Routes = [
-
-  { path: 'about', component: About },
+  { path: '', component: Home },
+  { path: 'about/testTP/about.html', component: About },
 ];
