@@ -4,5 +4,6 @@ import { About } from './about/about';
 
 export const routes: Routes = [
   { path: '', component: Home },
-  { path: 'about/testTP/about.html', component: About },
+  { path: 'index.html', component: Home },
+  { path: 'about', component: About },
 ];
