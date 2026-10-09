@@ -8,4 +8,5 @@ export const routes: Routes = [
   { path: 'index.html', component: Home },
   { path: 'about', component: About },
   { path: 'consultAct', component: ConsultActivite },
+  { path: 'consultAct/:id', component: ConsultActivite },
 ];
