@@ -1,59 +1,56 @@
-# Tp3Angular
+# TP3 Angular - Gestion d'Activités
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.23.
+Application **Angular** - Romain SIEURIN - *Champ d'application M2*.
 
-## Development server
+---
 
-To start a local development server, run:
+## Déploiement Github Pages
 
-```bash
-ng serve
-```
+L'application est déployée via cette URL :
+**[https://srn-romain.github.io/tp3AngularM2ChampApplication/](https://srn-romain.github.io/tp3AngularM2ChampApplication/)**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Compte rendu
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Le compte rendu est disponible à la racine du dépôt :  
+📁 **`CR-RomainSieurin.pdf`**
 
-```bash
-ng generate component component-name
-```
+Ce document présente l'ensemble de la réalisation du projet avec des captures d'écrans.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Lancement du projet en local
 
-## Building
+### Prérequis
+- **Node.js** (v18+)
+- **npm**
 
-To build the project run:
+### Commandes
+1. Cloner le dépôt et entrer dans le dossier :
+   ```bash
+   git clone https://github.com/srn-romain/tp3AngularM2ChampApplication.git
+   cd tp3AngularM2ChampApplication
+   ```
 
-```bash
-ng build
-```
+2. Installer les dépendances :
+   ```bash
+   npm install
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. Lancer le serveur de développement :
+   ```bash
+   npm start
+   ```
 
-## Running unit tests
+4. Ouvrir [http://localhost:4200/](http://localhost:4200/) dans votre navigateur.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## Error auxquelles j'ai été confronté : pas de `href` dans `app.html` ?
 
-## Running end-to-end tests
+Dans le menu (src/app/app.html), on utilise routerLink plutôt que href pour deux raisons :
 
-For end-to-end (e2e) testing, run:
+- `href` recharge entièrement la page. L'application repart de zéro, les données du tableau en mémoire sont perdues et GitHub Pages renvoie une erreur 404.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `routerLink` change de page instantanément sans rechargement, ce qui conserve les données en mémoire dans le service.
