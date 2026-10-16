@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ActiviteService } from '../services/activite/activite-service';
 
 @Component({
@@ -15,8 +15,14 @@ export class ConsultActivite implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     public activiteService: ActiviteService
   ) {}
+
+  supprimeElem(index: number = Number(this.id)): void {
+    this.activiteService.removeItem(index);
+    this.router.navigate(['']);
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
