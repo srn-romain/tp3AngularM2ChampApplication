@@ -1,0 +1,8 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ActiviteService {
+  objectifs: string[] = ['Finir le TP', 'Faire du sport'];
+}

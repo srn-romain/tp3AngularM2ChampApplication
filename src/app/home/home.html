@@ -23,7 +23,7 @@
     }
   </div>
   <div class="col">
-    @for (element of objectifs; track $index) {
+    @for (element of activiteService.objectifs; track $index) {
       <p class="life-container" animate.enter="animation-ajout">{{ element }}</p>
     }
   </div>

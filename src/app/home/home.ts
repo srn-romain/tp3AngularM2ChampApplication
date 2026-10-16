@@ -13,16 +13,19 @@ export class Home implements OnInit {
   nbItems: number = 0;
   btnText: string = 'ajout';
   objectifText: string = '';
-  objectifs: string[] = ['Finir le TP', 'Faire du sport'];
   showForm: boolean = false;
+
+  get objectifs(): string[] {
+    return this.activiteService.objectifs;
+  }
 
   constructor(
     private monRouteur: Router,
-    private activiteService: ActiviteService
+    public activiteService: ActiviteService
   ) {}
 
   ngOnInit(): void {
-    this.nbItems = this.objectifs.length;
+    this.nbItems = this.activiteService.objectifs.length;
   }
 
   toggleForm(): void {
@@ -31,9 +34,9 @@ export class Home implements OnInit {
 
   ajoutItem(): void {
     if (this.objectifText.trim() !== '') {
-      this.objectifs.push(this.objectifText);
-      this.nbItems = this.objectifs.length;
-      console.log('Objectifs :', this.objectifs);
+      this.activiteService.objectifs.push(this.objectifText);
+      this.nbItems = this.activiteService.objectifs.length;
+      console.log('Objectifs :', this.activiteService.objectifs);
       this.objectifText = '';
 
       setTimeout(() => {
