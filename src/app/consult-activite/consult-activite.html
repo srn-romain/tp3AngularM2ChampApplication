@@ -1,6 +1,22 @@
 <h3>Detail de l'activité:</h3>
 <ol>
-  <li>Nom de l'activité: <strong>{{ activite }}</strong></li>
+  <li>
+    Nom de l'activité:
+    @if (!isEditing) {
+      <strong>{{ activite }}</strong>
+    } @else {
+      <input type="text" [(ngModel)]="nouvelleActivite" (keyup.enter)="sauvegarder()" class="txt-edit">
+    }
+  </li>
 </ol>
 
-<button type="button" class="btn-suppr" (click)="supprimeElem(+id)">Supprimer cette activité</button>
+<div class="actions">
+  <button type="button" class="btn-danger" (click)="supprimeElem(+id)">Supprimer</button>
+
+  @if (isEditing) {
+    <button type="button" class="btn-primary" (click)="sauvegarder()">Sauvegarder</button>
+  } @else {
+    <button type="button" class="btn-primary" (click)="activerEdition()">Modifier</button>
+    <button type="button" class="btn-success" (click)="retour()">Retour</button>
+  }
+</div>
