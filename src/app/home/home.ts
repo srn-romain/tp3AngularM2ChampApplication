@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ActiviteService } from '../services/activite/activite-service';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,10 @@ export class Home implements OnInit {
   objectifs: string[] = ['Finir le TP', 'Faire du sport'];
   showForm: boolean = false;
 
-  constructor(private monRouteur: Router) {}
+  constructor(
+    private monRouteur: Router,
+    private activiteService: ActiviteService
+  ) {}
 
   ngOnInit(): void {
     this.nbItems = this.objectifs.length;
