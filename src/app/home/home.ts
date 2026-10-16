@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class Home implements OnInit {
   nbItems: number = 0;
   btnText: string = 'ajout';
-  objectifText: string = '...';
+  objectifText: string = '';
   objectifs: string[] = ['Finir le TP', 'Faire du sport'];
   showForm: boolean = false;
 
