@@ -2,6 +2,8 @@
 <h3>Liste des objectifs :</h3>
 <ol>
   @for (element of objectifs; track $index) {
-    <li>{{ element }}</li>
+    <li [routerLink]="['/consultAct', $index]" (click)="consulter($index)" style="cursor: pointer; text-decoration: underline; margin-bottom: 0.5em;">
+      {{ element }}
+    </li>
   }
 </ol>

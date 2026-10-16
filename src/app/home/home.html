@@ -24,7 +24,7 @@
   </div>
   <div class="col">
     @for (element of activiteService.objectifs; track $index) {
-      <p class="life-container" animate.enter="animation-ajout">{{ element }}</p>
+      <p class="life-container" animate.enter="animation-ajout" [routerLink]="['/consultAct', $index]" (click)="consulter($index)">{{ element }}</p>
     }
   </div>
 </div>

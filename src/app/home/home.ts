@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ActiviteService } from '../services/activite/activite-service';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -20,7 +20,7 @@ export class Home implements OnInit {
   }
 
   constructor(
-    private monRouteur: Router,
+    public monRouteur: Router,
     public activiteService: ActiviteService
   ) {}
 
@@ -30,6 +30,10 @@ export class Home implements OnInit {
 
   toggleForm(): void {
     this.showForm = !this.showForm;
+  }
+
+  consulter(index: number): void {
+    this.monRouteur.navigate(['/consultAct', index]);
   }
 
   ajoutItem(): void {
